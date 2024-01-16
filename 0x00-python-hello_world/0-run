@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 "$PYFILE"
+[ -z "$PYFILE" ] && { echo "Error: Environment variable \$PYFILE is not set."; exit 1; } || python3 "$PYFILE"
