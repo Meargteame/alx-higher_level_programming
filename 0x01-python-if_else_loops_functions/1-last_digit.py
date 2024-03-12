@@ -6,7 +6,7 @@ number = random.randint(-10000, 10000)
 last_digit = str(number)[-1]
 if number < 0:
   last_digit = '-' + last_digit
-  print("Last digit of",number,"is",last_digit,"and is less than 6 and not 0",end=" ")
+  print("Last digit of", number, "is", last_digit ,"and is less than 6 and not 0", end=" ")
 # Print the desired output
 else:
   print("Last digit of", number, "is", last_digit, end=" ")
