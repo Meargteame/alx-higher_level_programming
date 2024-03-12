@@ -4,9 +4,6 @@ import random
 # Assign a random signed number to the variable `number`
 number = random.randint(-10000, 10000)
 
-# Get the absolute value of the number to handle negative numbers
-number = abs(number)
-
 # Convert the number to a string and get the last character (digit)
 last_digit = str(number)[-1]
 
