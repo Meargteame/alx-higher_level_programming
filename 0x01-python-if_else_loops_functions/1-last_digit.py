@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 import random
-
-# Assign a random signed number to the variable `number`
-# number = random.randint(-10000, 10000)
-number = int(input())
+number = random.randint(-10000, 10000)
 
 # Convert the number to a string and get the last character (digit)
 last_digit = str(number)[-1]
@@ -22,4 +19,3 @@ elif last_digit == '0':
   print("and is 0")
 else:
   print("and is less than 6 and not 0")
-
