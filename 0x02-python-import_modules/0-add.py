@@ -1,4 +1,7 @@
-from add_0 import add as ad
 a = 1
 b = 2
-print(f"{a} + {b} = {ad(a, b)}")
+
+from add_0 import add
+
+result = add(a, b)
+print(f"{a} + {b} = {result}")
