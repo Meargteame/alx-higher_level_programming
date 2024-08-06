@@ -27,11 +27,9 @@ def list_states(user, password, database, state_name):
         port=3306
     )
     cur = db.cursor()
-    # Use format method to insert the state name into the query
-    query = (
-        "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC"
-    ).format(state_name)
-    cur.execute(query)
+    # Use parameterized query to avoid SQL injection
+    query = "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC"
+    cur.execute(query, (state_name,))
     rows = cur.fetchall()
 
     for row in rows:
