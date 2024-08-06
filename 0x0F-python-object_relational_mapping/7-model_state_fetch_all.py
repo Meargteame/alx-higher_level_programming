@@ -7,9 +7,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
-    # Ensure correct number of arguments
-    if len(sys.argv) != 3:
+def main():
+    # Check for correct number of arguments
+    if len(sys.argv) != 4:
         print("Usage: ./7-model_state_fetch_all.py <mysql username> <mysql password> <database name>")
         sys.exit(1)
 
@@ -32,3 +32,6 @@ if __name__ == "__main__":
 
     # Close the session
     session.close()
+
+if __name__ == "__main__":
+    main()
