@@ -4,11 +4,6 @@ from sqlalchemy import Column , Integer , String
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine("mysql://root:thisis1yearplan2025@locahost:/hbtn_0e_6_usa")
-
-Session = sessionmaker()
-session = Session()
-
 Base = declarative_base()
 
 class State(Base):
@@ -17,6 +12,6 @@ class State(Base):
     name =Column(String(128),nullable=False)
 
 
-
-Base.metadata.create_all(engine)
-session.commit()
+if __name__ == '__main__':
+    engine = create_engine("mysql://root:thisis1yearplan2025@localhost:3306/hbtn_0e_6_usa")
+    Base.metadata.create_all(engine)
