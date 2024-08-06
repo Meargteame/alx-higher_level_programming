@@ -7,6 +7,8 @@ import MySQLdb
 import sys
 
 
+state_name=sys.argv[4]
+
 def list_states(user, password, database):
     """
     Connect to the MySQL database and list all states.
@@ -24,7 +26,8 @@ def list_states(user, password, database):
     )
     cur = db.cursor()
     cur.execute(
-        "SELECT id, name FROM states WHERE name LIKE 'N%'ORDER BY id ASC"
+             "SELECT id, name FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+
         )
     rows = cur.fetchall()
 
@@ -36,7 +39,7 @@ def list_states(user, password, database):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("Usage: ./select_states.py <user> <password> <database>")
     else:
         list_states(sys.argv[1], sys.argv[2], sys.argv[3])
