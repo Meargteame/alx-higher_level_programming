@@ -24,7 +24,7 @@ def list_states(user, password, database):
     )
     cur = db.cursor()
     cur.execute(
-        "SELECT id, name FROM states WHERE name LIKE BINARY'N%'ORDER BY id ASC"
+        "SELECT id, name FROM states WHERE name LIKE 'N%'ORDER BY id ASC"
         )
     rows = cur.fetchall()
 
